@@ -353,9 +353,9 @@ void Assembler::encode_from_mnemonic_branch_jump(
 /**
  * @brief Read the entire contents of a file on disk into a string
  */
-std::string read_file_from_path(std::string_view path)
+std::string read_file_from_path(std::filesystem::path const& path)
 {
-    std::ifstream f(path.data(), std::ios::in | std::ios::binary);
+    std::ifstream f(path, std::ios::in | std::ios::binary);
     const auto sz = std::filesystem::file_size(path);
 
     std::string result(sz, '\0');

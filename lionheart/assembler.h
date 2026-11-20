@@ -15,6 +15,7 @@
 
 #include <cstddef>              // for byte
 #include <cstddef>              // for size_t
+#include <filesystem>           // for path
 #include <fmt/format.h>         // for format
 #include <lionheart/assembly.h> // for Instructions, Symbols, is_direct_prefix
 #include <lionheart/memory.h>   // for Memory
@@ -107,6 +108,6 @@ class Assembler
     address_table_t jump_{};
 };
 
-std::string read_file_from_path(std::string_view path);
+std::string read_file_from_path(std::filesystem::path const& path);
 
 } // namespace lionheart
